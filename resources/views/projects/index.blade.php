@@ -9,6 +9,7 @@
             <tr>
                 <th scope="col" class="pb-4">Title</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,12 @@
             <tr>
                 
                 <td>{{$project->title}}</td>
+                <td>
+                    <a href="{{$project->url}}">View the project on git-hub</a>
+                </td>
+                <td>
+                    <a href="{{route('projects.show', $project->id )}}">View more details</a>
+                </td>
                 
             </tr>
             @endforeach

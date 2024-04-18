@@ -34,6 +34,6 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
 });
 
 //projects routes
-Route::middleware(['auth', 'verified'])->name('projects.')->prefix('projects')->group(function() {
-        Route::get('/', [ProjectController::class, 'index'])->name('index');
+Route::middleware(['auth', 'verified'])->group(function() {
+        Route::resource('projects', ProjectController::class);
 });
