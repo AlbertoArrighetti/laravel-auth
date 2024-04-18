@@ -19,9 +19,9 @@ return new class extends Migration
             $table->text('description')->nullable();
 
             $table->text('thumb')->nullable();
-            $table->text('url', 500);
+            $table->text('url', 2000);
 
-            $table->string('programs');
+            $table->string('programs', 200);
 
             $table->timestamps();
         });

@@ -11,7 +11,7 @@ class StoreProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,28 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|max:255',
+            'description' => 'nullable|max:2000',
+            'thumb' => 'nullable|max:2000',
+            'url' => 'required|max:2000',
+            'programs' => 'required|max:200'
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            'required' => 'Il campo: :attribute deve essere inserito per proseguire.',
+            'max' => 'Il campo: :attribute deve contenere massimo :max caratteri.',
+        ];
+    }
+    public function attributes(): array
+    {
+        return [
+            'title' => 'Titolo',
+            'description' => 'Descrizione',
+            'thumb' => 'Thumb',
+            'url' => 'URL',
+            'programs' => 'Programmi',
         ];
     }
 }
