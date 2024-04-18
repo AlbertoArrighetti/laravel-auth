@@ -14,7 +14,6 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-
         return view('projects/index', compact('projects'));
     }
 
@@ -31,14 +30,14 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+        //validation
         $request->validated();
-
         $newProject = new Project();
-
-        //fill
+        //fillable
         $newProject->fill($request->all());
-
         $newProject->save();
+
+        // redirect to the list
         return redirect()->route('projects.index');
     }
 
