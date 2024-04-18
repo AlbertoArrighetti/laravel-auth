@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,12 +29,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 //admin routes
-Route::middleware(['auth', 'verified'])
-    ->name('admin.')
-    ->prefix('admin')
-    ->group(function() {
-        
+Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function() {
         Route::get('/', [DashboardController::class, 'index'])->name('index');
+});
 
-    }
-);
+//projects routes
+Route::middleware(['auth', 'verified'])->name('projects.')->prefix('projects')->group(function() {
+        Route::get('/', [ProjectController::class, 'index'])->name('index');
+});

@@ -12,4 +12,7 @@ class Project extends Model
 
     //softdeletes
     use SoftDeletes;
+
+    //fillable
+    protected $fillable = ['title', 'description', 'thumb', 'url', 'programs' ];
 }
