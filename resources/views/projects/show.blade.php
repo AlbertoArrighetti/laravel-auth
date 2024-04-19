@@ -14,7 +14,10 @@
         <div>{{$project->programs}}</div>
     </div>
     
-    <div>
+    <div class="d-flex gap-4 ">
+        <a href="{{route('projects.edit', $project->id)}}">
+            Edit your project
+        </a>
         <a href="{{route('projects.index')}}">
             Back to the list
         </a>
