@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => 'required|max:255',
             'description' => 'nullable|max:2000',
-            'thumb' => 'nullable|max:2000',
+            'thumb' => 'file|max:1024|nullable|',
             'url' => 'required|max:2000',
             'programs' => 'required|max:200'
         ];

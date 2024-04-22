@@ -9,7 +9,7 @@
     <div class="mb-5">
 
         <div class="text-center">
-            <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top mb-4" alt="Project Thumb">
+            <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top mb-4" style="width: 18rem;" alt="Project Thumb">
         </div>
 
         <div>{{$project->title}}</div>

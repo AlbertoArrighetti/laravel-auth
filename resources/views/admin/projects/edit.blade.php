@@ -6,7 +6,7 @@
     
     <h1 class="mb-5">Edit</h1>
 
-    <form action="{{route('admin.projects.update', $project->id)}}" method="POST">
+    <form action="{{route('admin.projects.update', $project->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -20,7 +20,6 @@
               @enderror
         </div>
         
-
         <div class="mb-3">
             <label for="description" class="form-label">Description :</label>
             <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description">{{old('description') ?? $project->description}}</textarea>
@@ -36,8 +35,12 @@
 
 
         <div class="mb-3">
-            <label for="thumb" class="form-label">Thumb :</label>
-            <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb') ?? $project->thumb}}">
+            
+            <div>
+                <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top mb-2" style="width: 18rem;" alt="Project Thumb">
+            </div>
+            <label for="thumb" class="form-label">Thumb : </label>
+            <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb">
                 @error('thumb')
                 <div class="invalid-feedback">
                     {{$message}}

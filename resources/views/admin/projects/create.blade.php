@@ -17,8 +17,7 @@
                   {{$message}}
               </div>
               @enderror
-        </div>
-        
+        </div>   
 
         <div class="mb-3">
             <label for="description" class="form-label">Description :</label>
@@ -30,10 +29,6 @@
                 @enderror
         </div>
 
-
-
-
-
         <div class="mb-3">
             <label for="thumb" class="form-label">Thumb image :</label>
             <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb">
@@ -43,10 +38,6 @@
                 </div>
                 @enderror
         </div>
-
-
-
-        
 
         <div class="mb-3">
             <label for="url" class="form-label">Link to the project :</label>
