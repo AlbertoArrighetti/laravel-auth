@@ -8,7 +8,7 @@
 
         <div>
             View all the projects
-            <a href="{{route('projects.index')}}">here</a>
+            <a href="{{route('admin.projects.index')}}">here</a>
         </div>
 
     </div>

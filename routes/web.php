@@ -31,9 +31,8 @@ require __DIR__.'/auth.php';
 //admin routes
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function() {
         Route::get('/', [DashboardController::class, 'index'])->name('index');
-});
 
-//projects routes
-Route::middleware(['auth', 'verified'])->group(function() {
+        //projects routes
         Route::resource('projects', ProjectController::class);
+
 });

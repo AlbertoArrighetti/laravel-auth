@@ -6,7 +6,7 @@
     
     <h1 class="mb-5">Edit</h1>
 
-    <form action="{{route('projects.update', $project->id)}}" method="POST">
+    <form action="{{route('admin.projects.update', $project->id)}}" method="POST">
         @csrf
         @method('PUT')
 
@@ -31,8 +31,12 @@
                 @enderror
         </div>
 
+
+
+
+
         <div class="mb-3">
-            <label for="thumb" class="form-label">Thumb URL :</label>
+            <label for="thumb" class="form-label">Thumb :</label>
             <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb') ?? $project->thumb}}">
                 @error('thumb')
                 <div class="invalid-feedback">
@@ -40,6 +44,10 @@
                 </div>
                 @enderror
         </div>
+
+
+
+        
 
         <div class="mb-3">
             <label for="url" class="form-label">Link to the project :</label>
@@ -67,7 +75,7 @@
         <div class="col-12 d-flex justify-content-between ">
           <button type="submit" class="btn btn-primary">Save changes</button>
 
-          <a href="{{route('projects.show', $project->id)}}">Cancel changes</a>
+          <a href="{{route('admin.projects.show', $project->id)}}">Cancel changes</a>
         </div>
     </form>
 

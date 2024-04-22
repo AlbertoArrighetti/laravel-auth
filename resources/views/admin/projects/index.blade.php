@@ -21,7 +21,7 @@
                     <a href="{{$project->url}}">View the project on git-hub</a>
                 </td>
                 <td>
-                    <a href="{{route('projects.show', $project->id )}}">View more details</a>
+                    <a href="{{route('admin.projects.show', $project->id )}}">View more details</a>
                 </td>
                 
             </tr>
@@ -30,7 +30,7 @@
     </table>
 
     <div>
-        <a href="{{route('projects.create')}}">create a new project</a>
+        <a href="{{route('admin.projects.create')}}">create a new project</a>
     </div>
 </div>
 @endsection
