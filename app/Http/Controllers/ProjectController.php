@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -33,6 +34,13 @@ class ProjectController extends Controller
         //validation
         $request->validated();
         $newProject = new Project();
+
+        //check for image file
+        if ($request->hasFile('thumb')) {
+            $thumb_path = Storage::disk('public')->put('projects_thumbs', $request->thumb);
+            $newProject->thumb = $thumb_path;
+        }
+
         //fillable
         $newProject->fill($request->all());
         $newProject->save();

@@ -7,10 +7,14 @@
     <h1 class="mb-5">Details</h1>
 
     <div class="mb-5">
+
+        <div class="text-center">
+            <img src="{{asset('storage/' . $project->thumb)}}" class="card-img-top mb-4" alt="Project Thumb">
+        </div>
+
         <div>{{$project->title}}</div>
         <div>{{$project->description}}</div>
         <div>{{$project->url}}</div>
-        <div>{{$project->thumb}}</div>
         <div>{{$project->programs}}</div>
     </div>
     

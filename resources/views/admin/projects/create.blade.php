@@ -6,7 +6,7 @@
     
     <h1 class="mb-5">Create</h1>
 
-    <form action="{{route('admin.projects.store')}}" method="POST">
+    <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
@@ -35,8 +35,8 @@
 
 
         <div class="mb-3">
-            <label for="thumb" class="form-label">Thumb :</label>
-            <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" value="{{old('thumb')}}">
+            <label for="thumb" class="form-label">Thumb image :</label>
+            <input type="file" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb">
                 @error('thumb')
                 <div class="invalid-feedback">
                     {{$message}}
